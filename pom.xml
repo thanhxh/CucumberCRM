@@ -212,7 +212,7 @@
                     </argLine>
                     <reportsDirectory>target/test-output</reportsDirectory>
                     <systemPropertyVariables>
-                        <allure.results.directory>target/allure-results</allure.results.directory>
+                        <allure.results.directory>reports/AllureReports/allure-results</allure.results.directory>
                     </systemPropertyVariables>
 
                 </configuration>

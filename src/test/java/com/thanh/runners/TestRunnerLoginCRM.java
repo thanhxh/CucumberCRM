@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
                 "json:target/cucumber-reports/TestRunnerLoginCRM.json",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
-        tags = ""
+        tags = "@InvalidLoginMultiple"
 )
 @Test
 public class TestRunnerLoginCRM extends AbstractTestNGCucumberTests {

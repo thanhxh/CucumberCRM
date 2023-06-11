@@ -11,7 +11,7 @@ public class LoginCRMPage extends CommonPage {
     private By inputEmail = By.xpath("//input[@id='email']");
     private By inputPassword = By.xpath("//input[@id='password']");
     private By buttonLogin = By.xpath("//button[normalize-space()='Login']");
-    private By messageAlert = By.xpath("//div[@class='text-center alert alert-danger']");
+    private By messageError = By.xpath("//div[@class='text-center alert alert-danger']");
 
 
     //Hàm xử lý đặc trưng cho Login Page
@@ -27,6 +27,11 @@ public class LoginCRMPage extends CommonPage {
 
     public void clickLoginButton() {
         clickElement(buttonLogin);
+    }
+
+    public void verifyErrorMessage() {
+        verifyElementVisible(messageError, "The error message not visible");
+        verifyEquals(getElementText(messageError), "Invalid email or password", "The content of message error not match. ");
     }
 
     public void verifyRedirectToDashboardPage() {
