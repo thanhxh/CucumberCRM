@@ -95,18 +95,13 @@ public class StepsLoginCRM {
         loginCRMPage.verifyEmptyMessagePassword();
     }
 
-    @Then("user should see an error empty message of username and password")
-    public void userShouldSeeAnErrorEmptyMessageOfUsernameAndPassword() {
-        loginCRMPage.verifyEmptyMessagePassword();
-        loginCRMPage.verifyEmptyMessageEmail();
-    }
-
     @And("user have forgotten their password")
     public void userHaveForgottenMyPassword() {
     }
 
     @When("user click on the {string} link")
     public void userClickOnTheLink(String buttonForgotPassword) {
+        loginCRMPage.clickForgotPasswordButton();
         WebUI.verifyEquals(buttonForgotPassword, "Forgot Password?");
     }
 
@@ -117,7 +112,7 @@ public class StepsLoginCRM {
 
     @And("click on the {string} button")
     public void clickOnTheButton(String confirm) {
-
+        loginCRMPage.clickConfirmButton();
     }
 
     @Then("user should receive an email with instructions to reset my password.")

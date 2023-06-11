@@ -13,6 +13,8 @@ public class LoginCRMPage extends CommonPage {
     private By buttonLogin = By.xpath("//button[normalize-space()='Login']");
     private By messageError = By.xpath("//div[@class='text-center alert alert-danger']");
     private By messageEmpty = By.xpath("//div[@class='alert alert-danger text-center']");
+    private By buttonForgotPassword = By.xpath("//a[normalize-space()='Forgot Password?']");
+    private By buttonConfỉm = By.xpath("//button[normalize-space()='Confirm']");
 
 
     //Hàm xử lý đặc trưng cho Login Page
@@ -28,6 +30,14 @@ public class LoginCRMPage extends CommonPage {
 
     public void clickLoginButton() {
         clickElement(buttonLogin);
+    }
+
+    public void clickForgotPasswordButton() {
+        clickElement(buttonForgotPassword);
+    }
+
+    public void clickConfirmButton() {
+        clickElement(buttonConfỉm);
     }
 
     public void verifyErrorMessage() {

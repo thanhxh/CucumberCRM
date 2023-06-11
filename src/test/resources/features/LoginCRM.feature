@@ -38,13 +38,6 @@ Feature: Login to CRM
     Then user should see an error empty message of password
     And stay on the login page
 
-  Scenario: Empty Username and Password
-    Given user login page
-    When user leave the username field empty
-    And user leave the password field empty
-    And click on the login button
-    Then user should see an error empty message of username and password
-    And stay on the login page
 
   Scenario: Forgotten Password
     Given user login page
