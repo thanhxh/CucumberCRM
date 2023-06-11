@@ -12,6 +12,7 @@ public class LoginCRMPage extends CommonPage {
     private By inputPassword = By.xpath("//input[@id='password']");
     private By buttonLogin = By.xpath("//button[normalize-space()='Login']");
     private By messageError = By.xpath("//div[@class='text-center alert alert-danger']");
+    private By messageEmpty = By.xpath("//div[@class='alert alert-danger text-center']");
 
 
     //Hàm xử lý đặc trưng cho Login Page
@@ -37,4 +38,23 @@ public class LoginCRMPage extends CommonPage {
     public void verifyRedirectToDashboardPage() {
         verifyElementVisible(avatar, "Can not redirect to Dashboard Page");
     }
+
+    public void enterValidPassword(String password) {
+        setText(inputPassword, password);
+    }
+
+    public void enterValidUsername(String email) {
+        setText(inputEmail, email);
+    }
+
+    public void verifyEmptyMessagePassword() {
+        verifyElementVisible(messageEmpty, "The empty message not visible");
+        verifyEquals(getElementText(messageEmpty), "The Password field is required.");
+    }
+
+    public void verifyEmptyMessageEmail() {
+        verifyElementVisible(messageEmpty, "The empty message not visible");
+        verifyEquals(getElementText(messageEmpty), "The Email Address field is required.");
+    }
+
 }

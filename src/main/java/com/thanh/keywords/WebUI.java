@@ -70,7 +70,6 @@ public class WebUI {
         Assert.assertTrue(getWebElement(by).isDisplayed(), message);
     }
 
-
     @Step("Verify Equals: {0} and {1}")
     public static void verifyEquals(Object actual, Object expected) {
         waitForPageLoaded();

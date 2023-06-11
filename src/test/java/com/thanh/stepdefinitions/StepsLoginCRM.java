@@ -7,7 +7,6 @@ import com.thanh.models.Credentials;
 import com.thanh.pages.LoginCRMPage;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -21,18 +20,13 @@ public class StepsLoginCRM {
         loginCRMPage = testContext.getLoginCRMPage();
     }
 
-    @Given("user login page")
-    public void userTheLoginPage() {
-        loginCRMPage.gotoLoginPage();
-    }
-
     @When("user enter valid username and password")
     public void userEnterValidUsernameAndPassword() {
         loginCRMPage.enterEmailAndPassword(ConstantGlobal.USERNAME, ConstantGlobal.PASSWORD);
     }
 
-    @And("user click the Login button")
-    public void userClickTheLoginButton() {
+    @And("click on the login button")
+    public void clickOnTheLoginButton() {
         loginCRMPage.clickLoginButton();
     }
 
@@ -71,7 +65,64 @@ public class StepsLoginCRM {
         loginCRMPage.verifyErrorMessage();
     }
 
-    @And("stay on the login page")
-    public void stayOnTheLoginPage() {
+
+    @When("user leave the username field empty")
+    public void userLeaveTheUsernameFieldEmpty() {
     }
+
+    @And("enter a valid password")
+    public void enterAValidPassword() {
+        loginCRMPage.enterValidPassword(ConstantGlobal.PASSWORD);
+    }
+
+
+    @Then("user should see an error empty message of username")
+    public void userShouldSeeAnErrorEmptyMessageOfUsername() {
+        loginCRMPage.verifyEmptyMessageEmail();
+    }
+
+    @When("user leave the password field empty")
+    public void userLeaveThePasswordFieldEmpty() {
+    }
+
+    @And("enter a valid username")
+    public void enterAValidUsername() {
+        loginCRMPage.enterValidUsername(ConstantGlobal.USERNAME);
+    }
+
+    @Then("user should see an error empty message of password")
+    public void userShouldSeeAnErrorEmptyMessageOfPassword() {
+        loginCRMPage.verifyEmptyMessagePassword();
+    }
+
+    @Then("user should see an error empty message of username and password")
+    public void userShouldSeeAnErrorEmptyMessageOfUsernameAndPassword() {
+        loginCRMPage.verifyEmptyMessagePassword();
+        loginCRMPage.verifyEmptyMessageEmail();
+    }
+
+    @And("user have forgotten their password")
+    public void userHaveForgottenMyPassword() {
+    }
+
+    @When("user click on the {string} link")
+    public void userClickOnTheLink(String buttonForgotPassword) {
+        WebUI.verifyEquals(buttonForgotPassword, "Forgot Password?");
+    }
+
+    @And("enter email address")
+    public void enterEmailAddress() {
+        loginCRMPage.enterValidUsername(ConstantGlobal.USERNAME);
+    }
+
+    @And("click on the {string} button")
+    public void clickOnTheButton(String confirm) {
+
+    }
+
+    @Then("user should receive an email with instructions to reset my password.")
+    public void userShouldReceiveAnEmailWithInstructionsToResetMyPassword() {
+    }
+
+
 }

@@ -143,3 +143,170 @@
 [INFO] 11-06-2023 16:49:47 [TestNG-test=Run Gherkin-1] [LogUtils] - Get text: Invalid email or password
 [INFO] 11-06-2023 16:49:47 [TestNG-test=Run Gherkin-1] [LogUtils] - Verify equals: Invalid email or password and Invalid email or password
 [INFO] 11-06-2023 16:49:47 [TestNG-test=Run Gherkin-1] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:30:34 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:30:38 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (91813fdd1931190ff0680d1d9bc4e2c9)
+[INFO] 11-06-2023 18:30:38 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:30:39 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:30:39 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:30:39 [main] [LogUtils] - Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:30:39 [main] [LogUtils] - Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:30:39 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:30:41 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:30:41 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:30:41 [main] [LogUtils] - Verify By.xpath: //img[contains(@class,'img img-responsive')] is displayed
+[INFO] 11-06-2023 18:30:41 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:30:41 [main] [LogUtils] - Verify equals: Customers and Customers
+[INFO] 11-06-2023 18:30:41 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:30:42 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:30:43 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (416ea30b4f0b9784dd6d2f2be69d5e5d)
+[INFO] 11-06-2023 18:30:43 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:30:43 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:30:43 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:30:44 [main] [LogUtils] - Set text: user@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:30:44 [main] [LogUtils] - Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:30:44 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:30:44 [main] [LogUtils] - Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:30:44 [main] [LogUtils] - Set text: 123 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Set text: user@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Set text: 123 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Verify By.xpath: //div[@class='text-center alert alert-danger'] is displayed
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Get text: Invalid email or password
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Verify equals: Invalid email or password and Invalid email or password
+[INFO] 11-06-2023 18:30:45 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:30:46 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:30:47 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (c4b4a99ab05f3b9675bbf146222d0b8d)
+[INFO] 11-06-2023 18:30:47 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:30:47 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:30:47 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:30:47 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:30:47 [main] [LogUtils] - Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:30:47 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:30:48 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:30:48 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:30:48 [main] [LogUtils] - Verify By.xpath: //div[@class='alert alert-danger text-center'] is displayed
+[INFO] 11-06-2023 18:30:48 [main] [LogUtils] - Get text: The Email Address field is required.
+[INFO] 11-06-2023 18:30:48 [main] [LogUtils] - Verify equals: The Email Address field is required. and The Email Address field is required.
+[INFO] 11-06-2023 18:30:48 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:30:48 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:30:49 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (708408f3314288f4d364a558641efed2)
+[INFO] 11-06-2023 18:30:49 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Verify By.xpath: //div[@class='alert alert-danger text-center'] is displayed
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Get text: The Password field is required.
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Verify equals: The Password field is required. and The Password field is required.
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:30:50 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:30:51 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (910eddff7f51825a34e6182b08c9ca0d)
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Verify By.xpath: //div[@class='alert alert-danger text-center'] is displayed
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Get text: The Password field is required.
+[INFO] 11-06-2023 18:30:52 [main] [LogUtils] - Verify equals: The Password field is required. and The Email Address field is required.
+[INFO] 11-06-2023 18:30:53 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:30:54 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (7b0eb7d7e0c193c33b57ad2850bd6d1c)
+[INFO] 11-06-2023 18:30:54 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:30:54 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:30:54 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:30:54 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:30:54 [main] [LogUtils] - Verify equals: Forgot Password and Forgot Password?
+[INFO] 11-06-2023 18:33:03 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:33:06 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (37aaf9e8daf901b56ad7c36fbf33389b)
+[INFO] 11-06-2023 18:33:07 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:33:07 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:33:07 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:33:07 [main] [LogUtils] - Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:33:07 [main] [LogUtils] - Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:33:07 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:33:09 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:33:09 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:33:09 [main] [LogUtils] - Verify By.xpath: //img[contains(@class,'img img-responsive')] is displayed
+[INFO] 11-06-2023 18:33:09 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:33:09 [main] [LogUtils] - Verify equals: Customers and Customers
+[INFO] 11-06-2023 18:33:09 [main] [LogUtils] - Successful login
+[INFO] 11-06-2023 18:33:10 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:33:11 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (893c44acd5b9e018eb835dabd9b20769)
+[INFO] 11-06-2023 18:33:11 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:33:11 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:33:11 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:33:12 [main] [LogUtils] - Set text: user@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:33:12 [main] [LogUtils] - Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:33:12 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:33:12 [main] [LogUtils] - Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:33:12 [main] [LogUtils] - Set text: 123 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Set text: user@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Set text: 123 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Verify By.xpath: //div[@class='text-center alert alert-danger'] is displayed
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Get text: Invalid email or password
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Verify equals: Invalid email or password and Invalid email or password
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Invalid Login with multiple account
+[INFO] 11-06-2023 18:33:13 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:33:14 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (38f942b3aecf33472d9a735c969d8ca3)
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Set text: 123456 on element By.xpath: //input[@id='password']
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:33:15 [main] [LogUtils] - Verify By.xpath: //div[@class='alert alert-danger text-center'] is displayed
+[INFO] 11-06-2023 18:33:16 [main] [LogUtils] - Get text: The Email Address field is required.
+[INFO] 11-06-2023 18:33:16 [main] [LogUtils] - Verify equals: The Email Address field is required. and The Email Address field is required.
+[INFO] 11-06-2023 18:33:16 [main] [LogUtils] - Empty Username
+[INFO] 11-06-2023 18:33:16 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:33:17 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (2707daeb498a68d75e3c5ecb1a6d43a4)
+[INFO] 11-06-2023 18:33:17 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:33:17 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:33:17 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:33:17 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:33:17 [main] [LogUtils] - Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:33:17 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:33:18 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:33:18 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:33:18 [main] [LogUtils] - Verify By.xpath: //div[@class='alert alert-danger text-center'] is displayed
+[INFO] 11-06-2023 18:33:18 [main] [LogUtils] - Get text: The Password field is required.
+[INFO] 11-06-2023 18:33:18 [main] [LogUtils] - Verify equals: The Password field is required. and The Password field is required.
+[INFO] 11-06-2023 18:33:18 [main] [LogUtils] - Empty Password
+[INFO] 11-06-2023 18:33:18 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:33:19 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (4617622c7f22fbfe0c6e05d7ec63bcda)
+[INFO] 11-06-2023 18:33:19 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:33:19 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:33:19 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:33:19 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:33:19 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Click element By.xpath: //button[normalize-space()='Login']
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Empty Username and Password
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Verify By.xpath: //div[@class='alert alert-danger text-center'] is displayed
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Get text: The Password field is required.
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Verify equals: The Password field is required. and The Password field is required.
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Verify By.xpath: //div[@class='alert alert-danger text-center'] is displayed
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Get text: The Password field is required.
+[INFO] 11-06-2023 18:33:20 [main] [LogUtils] - Verify equals: The Password field is required. and The Email Address field is required.
+[INFO] 11-06-2023 18:33:21 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:33:21 [main] [LogUtils] - Driver in TestContext: ChromeDriver: chrome on windows (a503268bfb16b42ab58251a0f9345b5f)
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Open URL: https://crm.anhtester.com/admin/authentication
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Verify By.xpath: //h1[normalize-space()='Login'] is displayed
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Verify equals: Forgot Password? and Forgot Password?
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Set text: admin@example.com on element By.xpath: //input[@id='email']
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Forgotten Password
+[INFO] 11-06-2023 18:33:22 [main] [LogUtils] - Forgotten Password
