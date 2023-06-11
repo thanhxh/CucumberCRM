@@ -28,5 +28,6 @@ public class TestRunnerLoginCRM extends AbstractTestNGCucumberTests {
     public Object[][] scenarios() {
         return super.scenarios();
     }
+
 }
 

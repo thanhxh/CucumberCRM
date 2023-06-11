@@ -105,6 +105,7 @@ public class StepsLoginCRM {
         WebUI.verifyEquals(buttonForgotPassword, "Forgot Password?");
     }
 
+    
     @And("enter email address")
     public void enterEmailAddress() {
         loginCRMPage.enterValidUsername(ConstantGlobal.USERNAME);

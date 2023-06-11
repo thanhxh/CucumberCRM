@@ -24,6 +24,7 @@ public class CommonStepDefinitions {
         loginCRMPage.gotoLoginPage();
     }
 
+
     @And("stay on the login page")
     public void stayOnTheLoginPage() {
     }

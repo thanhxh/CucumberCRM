@@ -36,6 +36,7 @@ public class LoginCRMPage extends CommonPage {
         clickElement(buttonForgotPassword);
     }
 
+
     public void clickConfirmButton() {
         clickElement(buttonConfỉm);
     }
