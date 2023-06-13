@@ -22,6 +22,7 @@ Feature: Login to CRM
     Then user should see an error message
     And stay on the login page
 
+  @EmptyUsername
   Scenario: Empty Username
     Given user login page
     When user leave the username field empty
@@ -30,6 +31,7 @@ Feature: Login to CRM
     Then user should see an error empty message of username
     And stay on the login page
 
+  @EmptyPassword
   Scenario: Empty Password
     Given user login page
     When user leave the password field empty
@@ -42,7 +44,7 @@ Feature: Login to CRM
   Scenario: Forgotten Password
     Given user login page
     And user have forgotten their password
-    When user click on the "Forgot Password?" link
+    When user click on the forgot password link
     And enter email address
-    And click on the "Confirm" button
+    And click on the confirm button
     Then user should receive an email with instructions to reset my password.

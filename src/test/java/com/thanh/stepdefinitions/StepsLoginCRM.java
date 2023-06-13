@@ -99,22 +99,22 @@ public class StepsLoginCRM {
     public void userHaveForgottenMyPassword() {
     }
 
-    @When("user click on the {string} link")
-    public void userClickOnTheLink(String buttonForgotPassword) {
+    @When("user click on the forgot password link")
+    public void userClickOnTheForgotPasswordLink() {
         loginCRMPage.clickForgotPasswordButton();
-        WebUI.verifyEquals(buttonForgotPassword, "Forgot Password?");
     }
 
-    
+
     @And("enter email address")
     public void enterEmailAddress() {
         loginCRMPage.enterValidUsername(ConstantGlobal.USERNAME);
     }
 
-    @And("click on the {string} button")
-    public void clickOnTheButton(String confirm) {
+    @And("click on the confirm button")
+    public void clickOnTheConfirmButton() {
         loginCRMPage.clickConfirmButton();
     }
+
 
     @Then("user should receive an email with instructions to reset my password.")
     public void userShouldReceiveAnEmailWithInstructionsToResetMyPassword() {
