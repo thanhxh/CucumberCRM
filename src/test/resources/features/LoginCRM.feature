@@ -40,7 +40,7 @@ Feature: Login to CRM
     Then user should see an error empty message of password
     And stay on the login page
 
-
+  @ForgotPassword
   Scenario: Forgotten Password
     Given user login page
     And user have forgotten their password

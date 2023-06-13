@@ -13,10 +13,10 @@ import io.cucumber.java.en.When;
 import java.util.List;
 import java.util.Map;
 
-public class StepsLoginCRM {
+public class StepsLogin {
     LoginPage loginPage;
 
-    public StepsLoginCRM(TestContext testContext) {
+    public StepsLogin(TestContext testContext) {
         loginPage = testContext.getLoginPage();
     }
 
