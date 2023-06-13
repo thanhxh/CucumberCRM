@@ -15,14 +15,14 @@ import org.testng.annotations.Test;
         plugin = {
                 "com.thanh.hooks.CucumberListener",
                 "pretty",
-                "html:target/cucumber-reports/TestRunnerLoginCRM.html",
-                "json:target/cucumber-reports/TestRunnerLoginCRM.json",
+                "html:target/cucumber-reports/TestRunnerLogin.html",
+                "json:target/cucumber-reports/TestRunnerLogin.json",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         tags = ""
 )
 @Test
-public class TestRunnerLoginCRM extends AbstractTestNGCucumberTests {
+public class TestRunnerLogin extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = false)
     public Object[][] scenarios() {

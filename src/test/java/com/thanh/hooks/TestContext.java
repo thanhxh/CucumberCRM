@@ -2,7 +2,7 @@ package com.thanh.hooks;
 
 import com.thanh.driver.DriverFactory;
 import com.thanh.pages.CommonPage;
-import com.thanh.pages.LoginCRMPage;
+import com.thanh.pages.LoginPage;
 import com.thanh.utils.LogUtils;
 import org.openqa.selenium.support.ThreadGuard;
 
@@ -10,7 +10,7 @@ import static com.thanh.driver.DriverManager.getDriver;
 
 public class TestContext {
     private CommonPage commonPage;
-    private LoginCRMPage loginCRMPage;
+    private LoginPage loginPage;
 
     public TestContext() {
         ThreadGuard.protect(new DriverFactory().createDriver());
@@ -24,11 +24,11 @@ public class TestContext {
         return commonPage;
     }
 
-    public LoginCRMPage getLoginCRMPage() {
-        if (loginCRMPage == null) {
-            loginCRMPage = new LoginCRMPage();
+    public LoginPage getLoginPage() {
+        if (loginPage == null) {
+            loginPage = new LoginPage();
         }
-        return loginCRMPage;
+        return loginPage;
     }
 
 

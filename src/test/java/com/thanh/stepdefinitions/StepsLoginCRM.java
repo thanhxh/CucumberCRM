@@ -4,7 +4,7 @@ import com.thanh.constants.ConstantGlobal;
 import com.thanh.hooks.TestContext;
 import com.thanh.keywords.WebUI;
 import com.thanh.models.Credentials;
-import com.thanh.pages.LoginCRMPage;
+import com.thanh.pages.LoginPage;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -14,25 +14,25 @@ import java.util.List;
 import java.util.Map;
 
 public class StepsLoginCRM {
-    LoginCRMPage loginCRMPage;
+    LoginPage loginPage;
 
     public StepsLoginCRM(TestContext testContext) {
-        loginCRMPage = testContext.getLoginCRMPage();
+        loginPage = testContext.getLoginPage();
     }
 
     @When("user enter valid username and password")
     public void userEnterValidUsernameAndPassword() {
-        loginCRMPage.enterEmailAndPassword(ConstantGlobal.USERNAME, ConstantGlobal.PASSWORD);
+        loginPage.enterEmailAndPassword(ConstantGlobal.USERNAME, ConstantGlobal.PASSWORD);
     }
 
     @And("click on the login button")
     public void clickOnTheLoginButton() {
-        loginCRMPage.clickLoginButton();
+        loginPage.clickLoginButton();
     }
 
     @Then("user should be redirected to the dashboard page")
     public void userShouldBeRedirectedToTheDashboardPage() {
-        loginCRMPage.verifyRedirectToDashboardPage();
+        loginPage.verifyRedirectToDashboardPage();
     }
 
     @And("user should see the {string} menu")
@@ -55,14 +55,14 @@ public class StepsLoginCRM {
             String email = credential.getUsername();
             String password = credential.getPassword();
 
-            loginCRMPage.enterEmailAndPassword(email, password);
-            loginCRMPage.clickLoginButton();
+            loginPage.enterEmailAndPassword(email, password);
+            loginPage.clickLoginButton();
         }
     }
 
     @Then("user should see an error message")
     public void userShouldSeeAnErrorMessage() {
-        loginCRMPage.verifyErrorMessage();
+        loginPage.verifyErrorMessage();
     }
 
 
@@ -72,13 +72,13 @@ public class StepsLoginCRM {
 
     @And("enter a valid password")
     public void enterAValidPassword() {
-        loginCRMPage.enterValidPassword(ConstantGlobal.PASSWORD);
+        loginPage.enterValidPassword(ConstantGlobal.PASSWORD);
     }
 
 
     @Then("user should see an error empty message of username")
     public void userShouldSeeAnErrorEmptyMessageOfUsername() {
-        loginCRMPage.verifyEmptyMessageEmail();
+        loginPage.verifyEmptyMessageEmail();
     }
 
     @When("user leave the password field empty")
@@ -87,12 +87,12 @@ public class StepsLoginCRM {
 
     @And("enter a valid username")
     public void enterAValidUsername() {
-        loginCRMPage.enterValidUsername(ConstantGlobal.USERNAME);
+        loginPage.enterValidUsername(ConstantGlobal.USERNAME);
     }
 
     @Then("user should see an error empty message of password")
     public void userShouldSeeAnErrorEmptyMessageOfPassword() {
-        loginCRMPage.verifyEmptyMessagePassword();
+        loginPage.verifyEmptyMessagePassword();
     }
 
     @And("user have forgotten their password")
@@ -101,18 +101,18 @@ public class StepsLoginCRM {
 
     @When("user click on the forgot password link")
     public void userClickOnTheForgotPasswordLink() {
-        loginCRMPage.clickForgotPasswordButton();
+        loginPage.clickForgotPasswordButton();
     }
 
 
     @And("enter email address")
     public void enterEmailAddress() {
-        loginCRMPage.enterValidUsername(ConstantGlobal.USERNAME);
+        loginPage.enterValidUsername(ConstantGlobal.USERNAME);
     }
 
     @And("click on the confirm button")
     public void clickOnTheConfirmButton() {
-        loginCRMPage.clickConfirmButton();
+        loginPage.clickConfirmButton();
     }
 
 

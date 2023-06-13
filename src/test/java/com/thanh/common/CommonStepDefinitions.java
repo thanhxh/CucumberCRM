@@ -2,26 +2,26 @@ package com.thanh.common;
 
 import com.thanh.hooks.TestContext;
 import com.thanh.pages.CommonPage;
-import com.thanh.pages.LoginCRMPage;
+import com.thanh.pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 public class CommonStepDefinitions {
 
     TestContext testContext;
-    LoginCRMPage loginCRMPage;
+    LoginPage loginPage;
 
     CommonPage commonPage;
 
     public CommonStepDefinitions(TestContext testContext) {
         this.testContext = testContext;
         commonPage = testContext.getCommonPage();
-        loginCRMPage = testContext.getLoginCRMPage();
+        loginPage = testContext.getLoginPage();
     }
 
     @Given("user login page")
     public void userTheLoginPage() {
-        loginCRMPage.gotoLoginPage();
+        loginPage.gotoLoginPage();
     }
 
 

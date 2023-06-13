@@ -4,7 +4,7 @@
 
     <test name="Run Gherkin" parallel="classes">
         <classes>
-            <class name="com.thanh.runners.TestRunnerLoginCRM"/>
+            <class name="com.thanh.runners.TestRunnerLogin"/>
             <!--            <class name="com.anhtester.runners.TestRunnerCategoryCMS"/>-->
         </classes>
     </test>

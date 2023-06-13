@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import static com.thanh.keywords.WebUI.*;
 
-public class LoginCRMPage extends CommonPage {
+public class LoginPage extends CommonPage {
     //Khai báo Objects
     private By labelLogin = By.xpath("//h1[normalize-space()='Login']");
     private By inputEmail = By.xpath("//input[@id='email']");
