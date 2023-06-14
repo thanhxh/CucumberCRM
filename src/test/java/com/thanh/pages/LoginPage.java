@@ -44,6 +44,7 @@ public class LoginPage extends CommonPage {
 
     public void clickConfirmButton() {
         clickElement(buttonConfỉm);
+        sleep(2);
     }
 
     public void verifyErrorMessage() {
@@ -61,6 +62,7 @@ public class LoginPage extends CommonPage {
 
     public void enterValidUsername(String email) {
         setText(inputEmail, email);
+        sleep(2);
     }
 
     public void verifyEmptyMessagePassword() {

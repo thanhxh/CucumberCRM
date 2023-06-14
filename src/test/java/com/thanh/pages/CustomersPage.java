@@ -102,7 +102,7 @@ public class CustomersPage {
     }
 
     public void clickConfirmDeleteButton() {
-        WebUI.sleep(5);
+        WebUI.sleep(3);
         WebUI.alertAccept();
     }
 }
