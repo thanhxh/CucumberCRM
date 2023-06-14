@@ -28,6 +28,7 @@ public class WebUI {
     private final static long EXPLICIT_TIMEOUT = ConstantGlobal.EXPLICIT_TIMEOUT;
     private final static long STEP_TIME = ConstantGlobal.STEP_TIME;
     private final static long PAGE_LOAD_TIMEOUT = ConstantGlobal.PAGE_LOAD_TIMEOUT;
+    private final static long ALERT_TIMEOUT = ConstantGlobal.ALERT_TIMEOUT;
 
     static {
         PropertiesHelpers.loadAllFiles();
@@ -173,43 +174,58 @@ public class WebUI {
     }
 
     //Handle Alert
+    @Step("Handle alert accept")
     public static void alertAccept() {
-        waitForPageLoaded();
-        sleep(STEP_TIME);
+        verifyAlertPresent();
         DriverManager.getDriver().switchTo().alert().accept();
+        LogUtils.info("Accept alert successful");
     }
 
+    @Step("Handle cancle alert")
     public static void alertDismiss() {
-        waitForPageLoaded();
-        verifyAlertPresent(1);
+        verifyAlertPresent();
         DriverManager.getDriver().switchTo().alert().dismiss();
+        LogUtils.info("Cancel alert successful");
     }
 
+    @Step("Handle get text alert")
     public static void alertGetText() {
-        waitForPageLoaded();
-        verifyAlertPresent(1);
+        verifyAlertPresent();
         DriverManager.getDriver().switchTo().alert().getText();
+        LogUtils.info("Get text alert successful");
     }
 
+    @Step("Handle set text alert : {0}")
     public static void alertSetText(String text) {
-        waitForPageLoaded();
-        verifyAlertPresent(1);
+        verifyAlertPresent();
         DriverManager.getDriver().switchTo().alert().sendKeys(text);
+        LogUtils.info("Set text alert: " + text);
     }
 
-    public static boolean verifyAlertPresent(int timeOut) {
-        waitForPageLoaded();
-        sleep(STEP_TIME);
+    @Step("Verify alert present")
+    public static boolean verifyAlertPresent() {
         try {
-            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut), Duration.ofMillis(500));
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ALERT_TIMEOUT), Duration.ofMillis(500));
             wait.until(ExpectedConditions.alertIsPresent());
             return true;
         } catch (Throwable error) {
+            LogUtils.info("Not found Alert.");
             Assert.fail("Not found Alert.");
             return false;
         }
     }
 
+    public static boolean verifyAlertPresent(int timeOut) {
+        try {
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut), Duration.ofMillis(500));
+            wait.until(ExpectedConditions.alertIsPresent());
+            return true;
+        } catch (Throwable error) {
+            LogUtils.info("Not found Alert.");
+            Assert.fail("Not found Alert.");
+            return false;
+        }
+    }
 
     @Step("Get text of element {0}")
     public static String getElementText(By by) {

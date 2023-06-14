@@ -92,16 +92,17 @@ public class CustomersPage {
         WebUI.setTextAndKey(inputSearch, nameCompany, Keys.ENTER);
         WebUI.waitForPageLoaded();
         checkSearchTableByColumn(3, nameCompany);
+        WebUI.sleep(2);
     }
 
     public void clickDeleteButton(int row, int column) {
         WebUI.moveToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
         WebUI.waitForPageLoaded();
         WebUI.clickElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]//a[normalize-space()='Delete']"));
-        WebUI.sleep(5);
     }
 
     public void clickConfirmDeleteButton() {
+        WebUI.sleep(5);
         WebUI.alertAccept();
     }
 }
