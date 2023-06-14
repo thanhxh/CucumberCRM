@@ -9,6 +9,7 @@ public class ConstantGlobal {
 
     public final static String BROWSER = PropertiesHelpers.getValue("BROWSER");
     public final static boolean HEADLESS = Boolean.parseBoolean(PropertiesHelpers.getValue("HEADLESS"));
+    
     public final static String URL = PropertiesHelpers.getValue("URL");
     public final static String USERNAME = PropertiesHelpers.getValue("USERNAME");
     public final static String PASSWORD = PropertiesHelpers.getValue("PASSWORD");

@@ -1,8 +1,6 @@
 package com.thanh.utils;
 
 import com.thanh.helpers.DataFakerHelpers;
-import io.cucumber.java.an.E;
-import org.testng.annotations.Test;
 
 import static com.thanh.helpers.DataFakerHelpers.getFaker;
 
@@ -22,10 +20,41 @@ public class DataGenerateUtils {
 
     }
 
-
-    public static String getAddress() {
+    public static String getFullAddress() {
         try {
-            return getFaker().address().fullAddress();
+            return DataFakerHelpers.getFaker().address().fullAddress();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String getRandomVAT() {
+        try {
+            return DataFakerHelpers.getFaker().regexify("[0-9]{9}");
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String getNameCity() {
+        try {
+            return DataFakerHelpers.getFaker().address().cityName();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String getNameState() {
+        try {
+            return DataFakerHelpers.getFaker().address().state();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String getZipCode() {
+        try {
+            return DataFakerHelpers.getFaker().address().zipCode();
         } catch (Exception e) {
             return null;
         }
@@ -42,8 +71,7 @@ public class DataGenerateUtils {
     public static long getRandomNumber() {
         try {
             return getFaker().number().randomNumber();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return 0;
         }
     }
@@ -51,8 +79,7 @@ public class DataGenerateUtils {
     public static int getNumberPositive() {
         try {
             return getFaker().number().positive();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return 0;
         }
 
@@ -61,8 +88,7 @@ public class DataGenerateUtils {
     public static int getNumberNegative() {
         try {
             return getFaker().number().negative();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return 0;
         }
 
@@ -71,8 +97,7 @@ public class DataGenerateUtils {
     public static int getOrderNumber() {
         try {
             return getFaker().number().numberBetween(0, 100);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return 0;
         }
 
@@ -81,8 +106,7 @@ public class DataGenerateUtils {
     public static String getFunnyName() {
         try {
             return getFaker().funnyName().name();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return null;
         }
 
@@ -91,8 +115,7 @@ public class DataGenerateUtils {
     public static String getCompanyName() {
         try {
             return getFaker().company().name();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return null;
         }
 
@@ -124,13 +147,7 @@ public class DataGenerateUtils {
     }
 
     // Hàm để tạo ra một địa chỉ ngẫu nhiên
-    public static String getFullAddress() {
-        try {
-            return DataFakerHelpers.getFaker().address().fullAddress();
-        } catch (Exception e) {
-            return null;
-        }
-    }
+
 
     // Hàm để tạo ra một số điện thoại ngẫu nhiên
     public static String getPhoneNumber(String number) {

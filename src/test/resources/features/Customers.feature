@@ -1,7 +1,8 @@
 Feature: Customers Page
 
   Background:Login as Admin role
-    Given user logged as an admin
+    Given user login page
+    Then user logged in with admin role
 
   @AddCustomer
   Scenario:Add a new customer

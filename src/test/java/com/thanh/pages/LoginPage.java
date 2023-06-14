@@ -23,6 +23,11 @@ public class LoginPage extends CommonPage {
         verifyElementVisible(labelLogin);
     }
 
+    public void loginAdminRole() {
+        enterEmailAndPassword(ConstantGlobal.USERNAME, ConstantGlobal.PASSWORD);
+        clickLoginButton();
+    }
+
     public void enterEmailAndPassword(String email, String password) {
         setText(inputEmail, email);
         setText(inputPassword, password);

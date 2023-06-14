@@ -172,6 +172,45 @@ public class WebUI {
         }
     }
 
+    //Handle Alert
+    public static void alertAccept() {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        DriverManager.getDriver().switchTo().alert().accept();
+    }
+
+    public static void alertDismiss() {
+        waitForPageLoaded();
+        verifyAlertPresent(1);
+        DriverManager.getDriver().switchTo().alert().dismiss();
+    }
+
+    public static void alertGetText() {
+        waitForPageLoaded();
+        verifyAlertPresent(1);
+        DriverManager.getDriver().switchTo().alert().getText();
+    }
+
+    public static void alertSetText(String text) {
+        waitForPageLoaded();
+        verifyAlertPresent(1);
+        DriverManager.getDriver().switchTo().alert().sendKeys(text);
+    }
+
+    public static boolean verifyAlertPresent(int timeOut) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        try {
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut), Duration.ofMillis(500));
+            wait.until(ExpectedConditions.alertIsPresent());
+            return true;
+        } catch (Throwable error) {
+            Assert.fail("Not found Alert.");
+            return false;
+        }
+    }
+
+
     @Step("Get text of element {0}")
     public static String getElementText(By by) {
         waitForPageLoaded();
