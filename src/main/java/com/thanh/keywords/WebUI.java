@@ -177,7 +177,7 @@ public class WebUI {
     @Step("Check data after searching on the Table by Column")
     public static void checkSearchTableByColumn(int column, String value) {
         waitForPageLoaded();
-        sleep(1);
+        sleep(2);
 
         //Xác định số dòng của table sau khi search
         List<WebElement> row = getWebElements(By.xpath("//table//tbody/tr"));

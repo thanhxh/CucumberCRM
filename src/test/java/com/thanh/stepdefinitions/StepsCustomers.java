@@ -11,10 +11,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class StepsCustomers {
-    public TestContext testContext;
-    public LoginPage loginPage;
-    public CustomersPage customersPage;
-    public CommonPage commonPage;
+    private TestContext testContext;
+    private LoginPage loginPage;
+    private CustomersPage customersPage;
+    private CommonPage commonPage;
     ExcelHelpers excelHelpers;
 
     public StepsCustomers(TestContext testContext) {

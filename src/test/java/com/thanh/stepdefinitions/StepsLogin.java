@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public class StepsLogin {
-    LoginPage loginPage;
+    private LoginPage loginPage;
 
     public StepsLogin(TestContext testContext) {
         loginPage = testContext.getLoginPage();

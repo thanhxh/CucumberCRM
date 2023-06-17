@@ -10,11 +10,11 @@ import io.cucumber.java.en.Then;
 
 public class CommonStepDefinitions {
 
-    TestContext testContext;
-    LoginPage loginPage;
+    private TestContext testContext;
+    private LoginPage loginPage;
 
-    CommonPage commonPage;
-    CustomersPage customersPage;
+    private CommonPage commonPage;
+    private CustomersPage customersPage;
 
     public CommonStepDefinitions(TestContext testContext) {
         this.testContext = testContext;
