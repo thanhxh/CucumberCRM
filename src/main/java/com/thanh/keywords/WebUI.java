@@ -190,7 +190,7 @@ public class WebUI {
             for (int i = 1; i <= rowTotal; i++) {
                 WebElement elementCheck = getWebElement(By.xpath("//table//tbody/tr[" + i + "]/td[" + column + "]"));
                 scrollToElement(elementCheck);
-                LogUtils.info("Value of searching is: " + value + " - " + " Text of element check is: " + elementCheck.getText());
+                LogUtils.info("Value after searching is: " + value + " - " + " Text of element check is: " + elementCheck.getText());
                 Assert.assertEquals(elementCheck.getText().toUpperCase(), value.toUpperCase(), "Line number " + i + " doesn't contain search value.");
             }
         }
