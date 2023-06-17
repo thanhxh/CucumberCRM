@@ -189,16 +189,12 @@ public class WebUI {
             //Duyệt từng dòng
             for (int i = 1; i <= rowTotal; i++) {
                 WebElement elementCheck = getWebElement(By.xpath("//table//tbody/tr[" + i + "]/td[" + column + "]"));
-
                 scrollToElement(elementCheck);
-
-                LogUtils.info(value + " - ");
-                LogUtils.info(elementCheck.getText());
+                LogUtils.info("Value of searching is: " + value + " - " + " Text of element check is: " + elementCheck.getText());
                 Assert.assertEquals(elementCheck.getText().toUpperCase(), value.toUpperCase(), "Line number " + i + " doesn't contain search value.");
             }
         }
     }
-
 
     //Handle Alert
     @Step("Handle alert accept")
@@ -339,7 +335,7 @@ public class WebUI {
     @Step("Scroll to element {0}")
     public static void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
-        js.executeScript("arguments[0].scrollIntoView(false);", element);
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
 
         if (PropertiesHelpers.getValue("SCREENSHOT_STEP").equals("yes")) {
             CaptureHelpers.takeScreenshot("scrollToElement_" + SystemsHelpers.makeSlug(element.getText()));
