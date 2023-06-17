@@ -1,13 +1,10 @@
 package com.thanh.pages;
 
-import com.thanh.keywords.WebUI;
 import com.thanh.utils.DataGenerateUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
-import java.util.List;
+import static com.thanh.keywords.WebUI.*;
 
 public class CustomersPage {
     private By buttonNewCustomer = By.xpath("//a[normalize-space()='New Customer']");
@@ -30,79 +27,59 @@ public class CustomersPage {
     private By inputSearch = By.xpath("(//input[contains(@placeholder,'Search')])[2]");
 
     private void languageDefault(String nameLanguage) {
-        WebUI.clickElement(dropdownDefaultLanguage);
-        WebUI.sleep(1);
-        WebUI.scrollToElement(By.xpath("//span[normalize-space()='" + nameLanguage + "']"));
-        WebUI.sleep(0.5);
-        WebUI.clickElement(By.xpath("//span[normalize-space()='" + nameLanguage + "']"));
-        WebUI.sleep(0.5);
+        clickElement(dropdownDefaultLanguage);
+        sleep(1);
+        scrollToElement(By.xpath("//span[normalize-space()='" + nameLanguage + "']"));
+        sleep(0.5);
+        clickElement(By.xpath("//span[normalize-space()='" + nameLanguage + "']"));
+        sleep(0.5);
     }
 
     public void clickNewCustomer() {
-        WebUI.clickElement(buttonNewCustomer);
+        clickElement(buttonNewCustomer);
     }
 
     public void enterInformation(String nameCompany, String groups, String currency, String nameLanguage, String country) {
 
-        WebUI.setText(inputCompany, nameCompany);
-        WebUI.setText(inputVAT, DataGenerateUtils.getRandomVAT());
-        WebUI.setText(inputPhoneNumber, DataGenerateUtils.getPhoneNumberLimit());
-        WebUI.clickElement(dropdownGroups);
-        WebUI.setTextAndKey(searchGroups, groups, Keys.ENTER);
-        WebUI.clickElement(dropdownCurrency);
-        WebUI.setTextAndKey(searchCurrency, currency, Keys.ENTER);
+        setText(inputCompany, nameCompany);
+        setText(inputVAT, DataGenerateUtils.getRandomVAT());
+        setText(inputPhoneNumber, DataGenerateUtils.getPhoneNumberLimit());
+        clickElement(dropdownGroups);
+        setTextAndKey(searchGroups, groups, Keys.ENTER);
+        clickElement(dropdownCurrency);
+        setTextAndKey(searchCurrency, currency, Keys.ENTER);
         languageDefault(nameLanguage);
-        WebUI.scrollToElement(inputAddress);
+        scrollToElement(inputAddress);
 
-        WebUI.setText(inputAddress, DataGenerateUtils.getFullAddress());
-        WebUI.setText(inputCity, DataGenerateUtils.getNameCity());
-        WebUI.scrollToElement(inputState);
-        WebUI.setText(inputState, DataGenerateUtils.getNameState());
-        WebUI.setText(inputZipCode, DataGenerateUtils.getZipCode());
-        WebUI.clickElement(dropdownCountry);
-        WebUI.setTextAndKey(searchCountry, country, Keys.ENTER);
+        setText(inputAddress, DataGenerateUtils.getFullAddress());
+        setText(inputCity, DataGenerateUtils.getNameCity());
+        scrollToElement(inputState);
+        setText(inputState, DataGenerateUtils.getNameState());
+        setText(inputZipCode, DataGenerateUtils.getZipCode());
+        clickElement(dropdownCountry);
+        setTextAndKey(searchCountry, country, Keys.ENTER);
     }
 
     public void clickSaveButton() {
-        WebUI.clickElement(buttonSave);
+        clickElement(buttonSave);
     }
 
-    public void checkSearchTableByColumn(int column, String name) {
-        WebUI.waitForPageLoaded();
-        WebUI.sleep(2);
-
-        //Xác định số dòng của table sau khi search
-        List<WebElement> row = WebUI.getWebElements(By.xpath("//table//tbody/tr"));
-        int rowTotal = row.size(); //Lấy ra số dòng
-        System.out.println("Number lines found: " + rowTotal);
-        //Duyệt từng dòng
-        for (int i = 1; i <= rowTotal; i++) {
-            WebElement elementCheck = WebUI.getWebElement(By.xpath("//table//tbody/tr[" + i + "]/td[" + column + "]"));
-
-            WebUI.scrollToElement(elementCheck);
-
-            System.out.print(name + " - ");
-            System.out.println(elementCheck.getText());
-            Assert.assertEquals(elementCheck.getText(), name, "Line number " + i + " doesn't contain search value.");
-        }
-
-    }
 
     public void searchCustomer(String nameCompany) {
-        WebUI.setTextAndKey(inputSearch, nameCompany, Keys.ENTER);
-        WebUI.waitForPageLoaded();
+        setTextAndKey(inputSearch, nameCompany, Keys.ENTER);
+        waitForPageLoaded();
         checkSearchTableByColumn(3, nameCompany);
-        WebUI.sleep(2);
+        sleep(2);
     }
 
     public void clickDeleteButton(int row, int column) {
-        WebUI.moveToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
-        WebUI.waitForPageLoaded();
-        WebUI.clickElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]//a[normalize-space()='Delete']"));
+        moveToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
+        waitForPageLoaded();
+        clickElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]//a[normalize-space()='Delete']"));
     }
 
     public void clickConfirmDeleteButton() {
-        WebUI.sleep(3);
-        WebUI.alertAccept();
+        sleep(3);
+        alertAccept();
     }
 }

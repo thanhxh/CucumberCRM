@@ -173,6 +173,33 @@ public class WebUI {
         }
     }
 
+    //Search values on table
+    @Step("Check data after searching on the Table by Column")
+    public static void checkSearchTableByColumn(int column, String value) {
+        waitForPageLoaded();
+        sleep(1);
+
+        //Xác định số dòng của table sau khi search
+        List<WebElement> row = getWebElements(By.xpath("//table//tbody/tr"));
+        int rowTotal = row.size(); //Lấy ra số dòng
+        LogUtils.info("Numnber of results for keywords (" + value + ") :  " + rowTotal);
+        if (rowTotal < 1) {
+            LogUtils.info("Not found value: " + value);
+        } else {
+            //Duyệt từng dòng
+            for (int i = 1; i <= rowTotal; i++) {
+                WebElement elementCheck = getWebElement(By.xpath("//table//tbody/tr[" + i + "]/td[" + column + "]"));
+
+                scrollToElement(elementCheck);
+
+                LogUtils.info(value + " - ");
+                LogUtils.info(elementCheck.getText());
+                Assert.assertEquals(elementCheck.getText().toUpperCase(), value.toUpperCase(), "Line number " + i + " doesn't contain search value.");
+            }
+        }
+    }
+
+
     //Handle Alert
     @Step("Handle alert accept")
     public static void alertAccept() {
