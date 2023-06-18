@@ -140,7 +140,7 @@ public class DataGenerateUtils {
     public static String getFullName() {
 
         try {
-            return DataFakerHelpers.getFaker().name().fullName();
+            return "TT_ " + DataFakerHelpers.getFaker().name().fullName();
         } catch (Exception e) {
             return null;
         }

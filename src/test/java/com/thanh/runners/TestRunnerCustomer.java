@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
                 "json:target/cucumber-reports/TestRunnerCustomer.json",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
-        tags = ""
+        tags = "@AddCustomer"
 )
 @Test
 public class TestRunnerCustomer extends AbstractTestNGCucumberTests {
