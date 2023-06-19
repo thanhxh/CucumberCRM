@@ -83,7 +83,7 @@ public class StepsCustomers {
         customersPage.clickConfirmDeleteButton();
     }
 
-    @And("re-search after delete successfull")
+    @And("re-search after delete successfully")
     public void reSearchAfterDeleteSuccessfull() {
         excelHelpers = new ExcelHelpers();
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
