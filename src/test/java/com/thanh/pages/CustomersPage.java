@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import static com.thanh.keywords.WebUI.*;
 
 public class CustomersPage {
-    private String CUSTOMER_NAME = "";
+    private String COMPANY_NAME = "";
     private By buttonNewCustomer = By.xpath("//a[normalize-space()='New Customer']");
     private By inputCompany = By.xpath("//input[@id='company']");
     private By inputVAT = By.xpath("//input[@id='vat']");
@@ -40,13 +40,10 @@ public class CustomersPage {
         clickElement(buttonNewCustomer);
     }
 
-    public String getCustomerName() {
-
-        CUSTOMER_NAME = DataGenerateUtils.getFullName();
-        System.out.println(CUSTOMER_NAME);
-
-        return null;
+    public String getCompanyName() {
+        return COMPANY_NAME = DataGenerateUtils.getFullName();
     }
+
 
     public void enterInformation(String companyName, String groups, String currency, String nameLanguage, String country) {
 

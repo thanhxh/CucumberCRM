@@ -39,7 +39,7 @@ public class StepsCustomers {
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
 
         customersPage.enterInformation(
-                customersPage.getCustomerName(),
+                customersPage.getCompanyName(),
 //                excelHelpers.getCellData("nameCompany", 1),
                 excelHelpers.getCellData("groups", 1),
                 excelHelpers.getCellData("currency", 1),
@@ -59,8 +59,8 @@ public class StepsCustomers {
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
         commonPage.openCustomersPage();
         customersPage.searchCustomer(
-//                customersPage.getCustomerName()
-                excelHelpers.getCellData("nameCompany", 1)
+                customersPage.getCompanyName()
+//                excelHelpers.getCellData("nameCompany", 1)
         );
     }
 
