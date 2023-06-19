@@ -57,7 +57,6 @@ public class CustomersPage {
         setTextAndKey(searchCurrency, currency, Keys.ENTER);
         languageDefault(nameLanguage);
         scrollToElement(inputAddress);
-
         setText(inputAddress, DataGenerateUtils.getFullAddress());
         setText(inputCity, DataGenerateUtils.getNameCity());
         scrollToElement(inputState);

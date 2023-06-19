@@ -15,7 +15,7 @@ public class StepsCustomers {
     private LoginPage loginPage;
     private CustomersPage customersPage;
     private CommonPage commonPage;
-    ExcelHelpers excelHelpers;
+    private ExcelHelpers excelHelpers;
 
     public StepsCustomers(TestContext testContext) {
         this.testContext = testContext;
@@ -84,7 +84,7 @@ public class StepsCustomers {
     }
 
     @And("re-search after delete successfully")
-    public void reSearchAfterDeleteSuccessfull() {
+    public void reSearchAfterDeleteSuccessfully() {
         excelHelpers = new ExcelHelpers();
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
         customersPage.reSearchCustomer(
