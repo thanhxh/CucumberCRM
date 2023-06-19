@@ -39,8 +39,8 @@ public class StepsCustomers {
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
 
         customersPage.enterInformation(
-                customersPage.getCompanyName(),
-//                excelHelpers.getCellData("nameCompany", 1),
+//                customersPage.getCompanyName(),
+                excelHelpers.getCellData("nameCompany", 1),
                 excelHelpers.getCellData("groups", 1),
                 excelHelpers.getCellData("currency", 1),
                 excelHelpers.getCellData("languageDefault", 1),
@@ -59,8 +59,8 @@ public class StepsCustomers {
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
         commonPage.openCustomersPage();
         customersPage.searchCustomer(
-                customersPage.getCompanyName()
-//                excelHelpers.getCellData("nameCompany", 1)
+//                customersPage.getCompanyName()
+                excelHelpers.getCellData("nameCompany", 1)
         );
     }
 
@@ -81,5 +81,14 @@ public class StepsCustomers {
     @Then("user confirm delete information in table")
     public void userConfirmDeleteInformationInTable() {
         customersPage.clickConfirmDeleteButton();
+    }
+
+    @And("re-search after delete successfull")
+    public void reSearchAfterDeleteSuccessfull() {
+        excelHelpers = new ExcelHelpers();
+        excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
+        customersPage.reSearchCustomer(
+                excelHelpers.getCellData("nameCompany", 1)
+        );
     }
 }

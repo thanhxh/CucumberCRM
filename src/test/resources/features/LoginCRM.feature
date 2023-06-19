@@ -47,4 +47,5 @@ Feature: Login to CRM
     When user click on the forgot password link
     And enter email address
     And click on the confirm button
+    And message is displayed
     Then user should receive an email with instructions to reset my password.

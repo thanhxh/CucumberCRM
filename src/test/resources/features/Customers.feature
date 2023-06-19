@@ -18,3 +18,4 @@ Feature: Customers Page
     When user enter valid information on search textbox
     And user click on delete information in table
     Then user confirm delete information in table
+    And re-search after delete successfull

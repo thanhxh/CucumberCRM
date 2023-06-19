@@ -115,6 +115,11 @@ public class StepsLogin {
         loginPage.clickConfirmButton();
     }
 
+    @And("message is displayed")
+    public void messageIsDisplayed() {
+        loginPage.verifyMessageForgotPassword();
+    }
+
 
     @Then("user should receive an email with instructions to reset my password.")
     public void userShouldReceiveAnEmailWithInstructionsToResetMyPassword() {

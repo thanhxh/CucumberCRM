@@ -15,6 +15,7 @@ public class LoginPage extends CommonPage {
     private By messageEmpty = By.xpath("//div[@class='alert alert-danger text-center']");
     private By buttonForgotPassword = By.xpath("//a[normalize-space()='Forgot Password?']");
     private By buttonConfỉm = By.xpath("//button[normalize-space()='Confirm']");
+    private By messageAfterConfirm = By.xpath("//div[contains(text(),'new password')]");
 
 
     //Hàm xử lý đặc trưng cho Login Page
@@ -73,6 +74,11 @@ public class LoginPage extends CommonPage {
     public void verifyEmptyMessageEmail() {
         verifyElementVisible(messageEmpty, "The empty message not visible");
         verifyEquals(getElementText(messageEmpty), "The Email Address field is required.");
+    }
+
+    public void verifyMessageForgotPassword() {
+        verifyElementVisible(messageAfterConfirm, "The message after confirm is not visible");
+        verifyEquals(getElementText(messageAfterConfirm), "Error setting new password");
     }
 
 }

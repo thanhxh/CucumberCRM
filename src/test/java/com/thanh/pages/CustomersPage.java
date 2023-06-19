@@ -26,6 +26,7 @@ public class CustomersPage {
     private By searchCountry = By.xpath("(//input[contains(@type,'search')])[4]");
     private By buttonSave = By.xpath("(//button[normalize-space()='Save'])[2]");
     private By inputSearch = By.xpath("(//input[contains(@placeholder,'Search')])[2]");
+    private By emptyDataInTable = By.xpath("//tbody//tr//td[contains(text(),'No matching')]");
 
     private void languageDefault(String nameLanguage) {
         clickElement(dropdownDefaultLanguage);
@@ -88,4 +89,12 @@ public class CustomersPage {
         sleep(3);
         alertAccept();
     }
+
+    public void reSearchCustomer(String companyName) {
+        setTextAndKey(inputSearch, companyName, Keys.ENTER);
+        waitForPageLoaded();
+        sleep(2);
+        verifyEquals(getElementText(emptyDataInTable), "No matching records found");
+    }
 }
+
