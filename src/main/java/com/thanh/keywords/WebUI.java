@@ -145,6 +145,56 @@ public class WebUI {
         }
     }
 
+    /**
+     * Xóa giá trị trong ô Text
+     *
+     * @param by an element of object type By
+     */
+    @Step("Clear value in textbox on : {0}")
+    public static void clearText(By by) {
+        waitForPageLoaded();
+        waitForElementVisible(by);
+        sleep(STEP_TIME);
+        getWebElement(by).clear();
+        LogUtils.info("Clear text in textbox " + by.toString());
+        AllureManager.saveTextLog("Clear text in textbox on " + by);
+    }
+
+    /**
+     * Xóa giá trị trong ô Text
+     *
+     * @param by an element of object type By
+     */
+    @Step("Clear text in textbox with Ctrl A on : {0}")
+    public static void clearTextCtrlA(By by) {
+        waitForElementVisible(by);
+        sleep(STEP_TIME);
+        Actions actions = new Actions(DriverManager.getDriver());
+        actions.click(getWebElement(by)).build().perform();
+        //actions.moveToElement(getWebElement(by)).click().build();
+        actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+        actions.sendKeys(Keys.DELETE).build().perform();
+        LogUtils.info("Clear text in textbox " + by.toString());
+        AllureManager.saveTextLog("Clear text in textbox on: " + by);
+    }
+
+    /**
+     * Điền giá trị vào ô Text
+     *
+     * @param by    an element of object type By
+     * @param value giá trị cần điền vào ô text
+     */
+    @Step("Clear and Fill text {1} on {0} ")
+    public static void clearAndFillText(By by, String value) {
+        waitForPageLoaded();
+        waitForElementVisible(by);
+        sleep(STEP_TIME);
+        getWebElement(by).clear();
+        getWebElement(by).sendKeys(value);
+        LogUtils.info("Clear and Fill " + value + " on " + by.toString());
+        AllureManager.saveTextLog("Clear and Fill: " + value + " on " + by.toString());
+    }
+
     @Step("Set text {1} on {0}")
     public static void setText(By by, String value) {
         waitForPageLoaded();
