@@ -4,6 +4,7 @@ import com.thanh.driver.DriverFactory;
 import com.thanh.pages.CommonPage;
 import com.thanh.pages.CustomersPage;
 import com.thanh.pages.LoginPage;
+import com.thanh.pages.ProjectsPage;
 import com.thanh.utils.LogUtils;
 import org.openqa.selenium.support.ThreadGuard;
 
@@ -13,6 +14,7 @@ public class TestContext {
     private CommonPage commonPage;
     private LoginPage loginPage;
     private CustomersPage customersPage;
+    private ProjectsPage projectsPage;
 
     public TestContext() {
         ThreadGuard.protect(new DriverFactory().createDriver());
@@ -38,6 +40,13 @@ public class TestContext {
             customersPage = new CustomersPage();
         }
         return customersPage;
+    }
+
+    public ProjectsPage getProjectPage() {
+        if (projectsPage == null) {
+            projectsPage = new ProjectsPage();
+        }
+        return projectsPage;
     }
 
 }

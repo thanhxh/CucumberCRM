@@ -48,12 +48,12 @@ public class StepsCustomers {
         );
     }
 
-    @And("user click on Save add button")
+    @And("user click on Save button add in customer information")
     public void userClickOnSaveAddButton() {
         customersPage.clickSaveButtonAdd();
     }
 
-    @Then("user checks the information again after add")
+    @Then("user checks the information again of customer after add")
     public void userChecksTheInformationAgainAfterAdd() {
         excelHelpers = new ExcelHelpers();
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
@@ -64,7 +64,7 @@ public class StepsCustomers {
         );
     }
 
-    @When("user enter valid information on search textbox")
+    @When("user enter valid information of customer on search textbox")
     public void userEnterValidInformationOnSearchTextbox() {
         excelHelpers = new ExcelHelpers();
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Customer");
@@ -93,12 +93,12 @@ public class StepsCustomers {
 
     }
 
-    @And("user click on Save edit button")
+    @And("user click on Save button edit in customer information")
     public void userClickOnSaveEditButton() {
         customersPage.clickSaveButtonEdit();
     }
 
-    @Then("user checks the information again after edit")
+    @Then("user checks the information again of customer after edit")
     public void userChecksTheInformationAgainAfterEdit() {
         excelHelpers = new ExcelHelpers();
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Edit Customer");
@@ -108,12 +108,7 @@ public class StepsCustomers {
         );
     }
 
-    @And("user click on delete information in table")
-    public void userClickOnDeleteInformationInTable() {
-        customersPage.clickDeleteButton(1, 3);
-    }
-
-    @When("user enter valid information after edit on search textbox")
+    @When("user enter valid information of customer after edit on search textbox")
     public void userEnterValidInformationAfterEditOnSearchTextbox() {
         excelHelpers = new ExcelHelpers();
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Edit Customer");
@@ -122,12 +117,17 @@ public class StepsCustomers {
         );
     }
 
-    @Then("user confirm delete information in table")
+    @And("user click on delete information of customer in table")
+    public void userClickOnDeleteInformationInTable() {
+        customersPage.clickDeleteButton(1, 3);
+    }
+
+    @Then("user confirm delete information of customer in table")
     public void userConfirmDeleteInformationInTable() {
         customersPage.clickConfirmDeleteButton();
     }
 
-    @And("re-search after delete successfully")
+    @And("re-search information of customer after delete successfully")
     public void reSearchAfterDeleteSuccessfully() {
         excelHelpers = new ExcelHelpers();
         excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Edit Customer");

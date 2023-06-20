@@ -16,5 +16,10 @@ public class CommonPage {
         return new CustomersPage();
     }
 
+    public ProjectsPage openProjectsPage() {
+        menuName("Projects");
+        return new ProjectsPage();
+    }
+
 
 }
