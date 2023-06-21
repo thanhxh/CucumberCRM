@@ -202,6 +202,7 @@
                         <!-- Call Suite path -->
                         <suiteXmlFile>src/test/resources/suites/LoginCRM.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/suites/Customer.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suites/Projects.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
 

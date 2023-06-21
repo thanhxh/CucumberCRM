@@ -78,6 +78,7 @@ public class ProjectsPage extends CommonPage {
     }
 
     public void clickEditButton(int row, int column) {
+        scrollToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
         moveToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
         waitForPageLoaded();
         clickElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]//a[normalize-space()='Edit']"));

@@ -89,6 +89,7 @@ public class CustomersPage extends CommonPage {
     }
 
     public void clickViewButton(int row, int column) {
+        scrollToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
         moveToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
         waitForPageLoaded();
         clickElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]//a[normalize-space()='View']"));
