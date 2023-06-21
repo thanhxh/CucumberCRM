@@ -6,6 +6,7 @@ import static com.thanh.keywords.WebUI.clickElement;
 
 public class CommonPage {
     public By avatar = By.xpath("//img[contains(@class,'img img-responsive')]");
+    public By inputSearch = By.xpath("(//input[contains(@placeholder,'Search')])[2]");
 
     public void menuName(String name) {
         clickElement(By.xpath("//span[normalize-space()='" + name + "']"));

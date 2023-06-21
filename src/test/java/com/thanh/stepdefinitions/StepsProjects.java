@@ -1,5 +1,6 @@
 package com.thanh.stepdefinitions;
 
+import com.thanh.helpers.ExcelHelpers;
 import com.thanh.hooks.TestContext;
 import com.thanh.pages.CommonPage;
 import com.thanh.pages.LoginPage;
@@ -14,6 +15,7 @@ public class StepsProjects {
     private LoginPage loginPage;
     private CommonPage commonPage;
     private ProjectsPage projectsPage;
+    private ExcelHelpers excelHelpers;
 
     public StepsProjects(TestContext testContext) {
         this.testContext = testContext;
@@ -33,14 +35,29 @@ public class StepsProjects {
 
     @And("user enter the project information")
     public void userEnterTheProjectInformation() {
-        projectsPage.enterProjectInformation();
+        excelHelpers = new ExcelHelpers();
+        excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Project");
+        projectsPage.enterProjectInformation(
+                excelHelpers.getCellData("nameProject", 1),
+                excelHelpers.getCellData("nameCustomer", 1),
+                excelHelpers.getCellData("totalRate", 1),
+                excelHelpers.getCellData("estimatedHours", 1)
+        );
     }
 
     @And("user click on Save button in project information")
     public void userClickOnSaveButtonInProjectInformation() {
+        projectsPage.clickSaveButtonAdd();
     }
 
     @Then("user checks the information again of project after add")
     public void userChecksTheInformationAgainOfProjectAfterAdd() {
+        excelHelpers = new ExcelHelpers();
+        excelHelpers.setExcelFile("src/test/resources/datatest/CRM.xlsx", "Project");
+        commonPage.openProjectsPage();
+        projectsPage.searchProject(
+                "In Progress",
+                excelHelpers.getCellData("nameProject", 1)
+        );
     }
 }

@@ -245,6 +245,46 @@ public class WebUI {
             }
         }
     }
+//Handle frame iframe Window Tab
+
+    @Step("Switch to Frame by Index: {0}")
+    public static void switchToFrameByIndex(int index) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(EXPLICIT_TIMEOUT), Duration.ofMillis(500));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(index));
+        //DriverManager.getDriver().switchTo().frame(Index);
+    }
+
+    @Step("Switch to Frame by ID or Name: {0}")
+    public static void switchToFrameByIdOrName(String IdOrName) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(EXPLICIT_TIMEOUT), Duration.ofMillis(500));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(IdOrName));
+    }
+
+    @Step("Switch to Frame by Element {0}")
+    public static void switchToFrameByElement(By by) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(EXPLICIT_TIMEOUT), Duration.ofMillis(500));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(by));
+    }
+
+    @Step("Switch to Default Content")
+    public static void switchToDefaultContent() {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        DriverManager.getDriver().switchTo().defaultContent();
+    }
+
+    @Step("Switch to Default Window (Exit Frame)")
+    public static void switchToExitFrame() {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        DriverManager.getDriver().switchTo().parentFrame();
+    }
 
     //Handle Alert
     @Step("Handle alert accept")

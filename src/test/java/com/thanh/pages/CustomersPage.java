@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 
 import static com.thanh.keywords.WebUI.*;
 
-public class CustomersPage {
+public class CustomersPage extends CommonPage {
     private String COMPANY_NAME = "";
     private By buttonNewCustomer = By.xpath("//a[normalize-space()='New Customer']");
     private By inputCompany = By.xpath("//input[@id='company']");
@@ -26,7 +26,7 @@ public class CustomersPage {
     private By dropdownCountry = By.xpath("//label[@for='country']//following-sibling::div");
     private By searchCountry = By.xpath("(//input[contains(@type,'search')])[4]");
     private By buttonSaveAdd = By.xpath("(//button[normalize-space()='Save'])[2]");
-    private By inputSearch = By.xpath("(//input[contains(@placeholder,'Search')])[2]");
+
     //Delete
     private By emptyDataInTable = By.xpath("//tbody//tr//td[contains(text(),'No matching')]");
 
