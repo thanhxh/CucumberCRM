@@ -119,12 +119,12 @@ public class StepsCustomers {
 
     @And("user click on delete information of customer in table")
     public void userClickOnDeleteInformationInTable() {
-        customersPage.clickDeleteButton(1, 3);
+        commonPage.clickDeleteButton(1, 3);
     }
 
     @Then("user confirm delete information of customer in table")
     public void userConfirmDeleteInformationInTable() {
-        customersPage.clickConfirmDeleteButton();
+        commonPage.clickConfirmDeleteButton();
     }
 
     @And("re-search information of customer after delete successfully")

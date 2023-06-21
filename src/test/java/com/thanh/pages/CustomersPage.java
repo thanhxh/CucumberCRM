@@ -7,7 +7,6 @@ import org.openqa.selenium.Keys;
 import static com.thanh.keywords.WebUI.*;
 
 public class CustomersPage extends CommonPage {
-    private String COMPANY_NAME = "";
     private By buttonNewCustomer = By.xpath("//a[normalize-space()='New Customer']");
     private By inputCompany = By.xpath("//input[@id='company']");
     private By inputVAT = By.xpath("//input[@id='vat']");
@@ -28,7 +27,7 @@ public class CustomersPage extends CommonPage {
     private By buttonSaveAdd = By.xpath("(//button[normalize-space()='Save'])[2]");
 
     //Delete
-    private By emptyDataInTable = By.xpath("//tbody//tr//td[contains(text(),'No matching')]");
+
 
     //Edit
     private By buttonSaveEdit = By.xpath("(//button[normalize-space()='Save'])[3]");
@@ -46,11 +45,6 @@ public class CustomersPage extends CommonPage {
     public void clickNewCustomer() {
         clickElement(buttonNewCustomer);
     }
-
-    public String getCompanyName() {
-        return COMPANY_NAME = DataGenerateUtils.getFullName();
-    }
-
 
     public void enterInformation(String companyName, String groups, String currency, String nameLanguage, String country) {
 
@@ -85,17 +79,6 @@ public class CustomersPage extends CommonPage {
         waitForPageLoaded();
         checkSearchTableByColumn(3, companyName);
         sleep(2);
-    }
-
-    public void clickDeleteButton(int row, int column) {
-        moveToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
-        waitForPageLoaded();
-        clickElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]//a[normalize-space()='Delete']"));
-    }
-
-    public void clickConfirmDeleteButton() {
-        sleep(3);
-        alertAccept();
     }
 
     public void reSearchCustomer(String companyName) {

@@ -63,7 +63,7 @@ public class ProjectsPage extends CommonPage {
         switchToExitFrame();
     }
 
-    public void clickSaveButtonAdd() {
+    public void clickSaveButton() {
         clickElement(buttonSave);
         sleep(1);
     }
@@ -75,6 +75,34 @@ public class ProjectsPage extends CommonPage {
         waitForPageLoaded();
         checkSearchTableByColumn(2, projectName);
         sleep(2);
+    }
+
+    public void clickEditButton(int row, int column) {
+        moveToElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
+        waitForPageLoaded();
+        clickElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]//a[normalize-space()='Edit']"));
+    }
+
+    public void editProjectInformation(String projectName, String totalRate, String estimatedHours) {
+        clearAndFillText(inputProjectName, projectName);
+        clickElement(dropdownCustomer);
+        clearAndFillText(inputTotalRate, totalRate);
+        sleep(0.5);
+        clearAndFillText(inputEstimatedHours, estimatedHours);
+        sleep(0.5);
+        switchToFrameByElement(frameDescription);
+        clearAndFillText(inputDescription, DataGenerateUtils.getRandomString(100));
+        sleep(1);
+        switchToExitFrame();
+    }
+
+    public void reSearchProject(String statusName, String projectName) {
+        clickElement(By.xpath("//a//span[normalize-space()='" + statusName + "']"));
+        sleep(1);
+        setTextAndKey(inputSearch, projectName, Keys.ENTER);
+        waitForPageLoaded();
+        sleep(2);
+        verifyEquals(getElementText(emptyDataInTable), "No matching records found");
     }
 
 }

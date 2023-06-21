@@ -13,7 +13,7 @@ Feature: Customers Page
     Then user checks the information again of customer after add
 
   @EditCustomer
-  Scenario:Edit a new customer
+  Scenario:Edit a customer
     Given user on the customer page
     When user enter valid information of customer on search textbox
     And user click on view information in table
