@@ -231,7 +231,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Study Cucumber TestNG</projectName>
+                            <projectName>Website CRM</projectName>
                             <skip>false</skip>
                             <outputDirectory>reports/CucumberReports/cucumber-reports</outputDirectory>
                             <inputDirectory>target/cucumber-reports</inputDirectory>
