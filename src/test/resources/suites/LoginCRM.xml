@@ -5,6 +5,7 @@
     <test name="Run Gherkin" parallel="classes">
         <classes>
             <class name="com.thanh.runners.TestRunnerLogin"/>
+            
         </classes>
     </test>
 
