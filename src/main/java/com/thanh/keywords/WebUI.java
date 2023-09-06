@@ -313,7 +313,7 @@ public class WebUI {
         } catch (AWTException e) {
             e.printStackTrace();
         }
-        //Thường filepath sẽ lấy trong thư mục hiện tại 
+        //Thường filepath sẽ lấy trong thư mục hiện tại
         // filePath = SystemsHelpers.getCurrentDir() + "datatest\\pilot.png";
 
         // Copy File path vào Clipboard
