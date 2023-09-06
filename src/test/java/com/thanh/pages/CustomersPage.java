@@ -12,6 +12,7 @@ public class CustomersPage extends CommonPage {
     private By inputVAT = By.xpath("//input[@id='vat']");
     private By inputPhoneNumber = By.xpath("//input[@id='phonenumber']");
     private By dropdownGroups = By.xpath("//label[normalize-space()='Groups']//following-sibling::div");
+    private By labelGroups = By.xpath("//label[normalize-space()='Groups']");
     private By searchGroups = By.xpath("(//input[contains(@type,'search')])[2]");
     private By buttonDeselectAll = By.xpath("//button[normalize-space()='Deselect All']");
     private By dropdownCurrency = By.xpath("//label[normalize-space()='Currency']//following-sibling::div");
@@ -51,8 +52,9 @@ public class CustomersPage extends CommonPage {
         setText(inputCompany, companyName);
         setText(inputVAT, DataGenerateUtils.getRandomVAT());
         setText(inputPhoneNumber, DataGenerateUtils.getPhoneNumberLimit());
-        clickElement(dropdownGroups);
-        setTextAndKey(searchGroups, groups, Keys.ENTER);
+//        clickElement(dropdownGroups);
+//        setTextAndKey(searchGroups, groups, Keys.ENTER);
+//        clickElement(labelGroups);
         clickElement(dropdownCurrency);
         setTextAndKey(searchCurrency, currency, Keys.ENTER);
         languageDefault(nameLanguage);
@@ -100,9 +102,10 @@ public class CustomersPage extends CommonPage {
         clearAndFillText(inputCompany, companyName);
         clearAndFillText(inputVAT, DataGenerateUtils.getRandomVAT());
         clearAndFillText(inputPhoneNumber, DataGenerateUtils.getPhoneNumberLimit());
-        clickElement(dropdownGroups);
-        clickElement(buttonDeselectAll);
-        setTextAndKey(searchGroups, groups, Keys.ENTER);
+//        clickElement(dropdownGroups);
+//        clickElement(buttonDeselectAll);
+//        setTextAndKey(searchGroups, groups, Keys.ENTER);
+//        clickElement(labelGroups);
         clickElement(dropdownCurrency);
         setTextAndKey(searchCurrency, currency, Keys.ENTER);
         languageDefault(nameLanguage);

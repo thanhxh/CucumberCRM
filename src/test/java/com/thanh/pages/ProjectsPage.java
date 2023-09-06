@@ -15,7 +15,9 @@ public class ProjectsPage extends CommonPage {
     private By inputTotalRate = By.xpath("//input[@id='project_cost']");
     private By inputEstimatedHours = By.xpath("//input[@id='estimated_hours']");
     private By startDate = By.xpath("//input[@id='start_date']");
+    private By inputStartDate = By.xpath("//div[@app-field-wrapper='start_date']//div[@class='input-group date']//input");
     private By deadLine = By.xpath("//input[@id='deadline']");
+    private By inputDeadLine = By.xpath("//div[@app-field-wrapper='deadline']//div[@class='input-group date']//input");
     private By frameDescription = By.xpath("//iframe[@id='description_ifr']");
     private By inputDescription = By.xpath("//body");
     private By buttonSave = By.xpath("//button[normalize-space()='Save']");
@@ -32,17 +34,15 @@ public class ProjectsPage extends CommonPage {
         clickElement(buttonNewProject);
     }
 
-    public void dayOfStartDate(String numberDay) {
+    public void dayOfStartDate(String enterStartDate) {
         clickElement(startDate);
-        sleep(2);
-        clickElement(By.xpath("//div[@class='xdsoft_calendar']//table//tbody//tr//td[normalize-space()='" + numberDay + "']"));
+        clearAndFillText(inputStartDate, enterStartDate);
         sleep(0.5);
     }
 
-    public void dayOfDeadline(String numberDay, String value) {
+    public void dayOfDeadline(String enterDeadLine) {
         clickElement(deadLine);
-        sleep(2);
-        clickElement(By.xpath("(//div[@class='xdsoft_calendar']//table//tbody//tr//td[normalize-space()='" + numberDay + "'])[" + value + "]"));
+        clearAndFillText(inputDeadLine, enterDeadLine);
         sleep(0.5);
     }
 
@@ -55,8 +55,8 @@ public class ProjectsPage extends CommonPage {
         setText(inputEstimatedHours, estimatedHours);
         sleep(0.5);
         scrollToElement(startDate);
-        dayOfStartDate("20");
-        dayOfDeadline("22", "2");
+        dayOfStartDate("20-08-2023");
+        dayOfDeadline("05-09-2023");
         switchToFrameByElement(frameDescription);
         setText(inputDescription, DataGenerateUtils.getRandomString(20));
         sleep(1);

@@ -46,6 +46,7 @@ public class DriverFactory {
     private WebDriver initChromeDriver() {
         WebDriver driver;
         System.out.println("Launching Chrome browser...");
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
@@ -65,6 +66,7 @@ public class DriverFactory {
     private WebDriver initEdgeDriver() {
         WebDriver driver;
         System.out.println("Launching Edge browser...");
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         WebDriverManager.edgedriver().setup();
 
         EdgeOptions options = new EdgeOptions();
@@ -84,6 +86,7 @@ public class DriverFactory {
     private WebDriver initFirefoxDriver() {
         WebDriver driver;
         System.out.println("Launching Firefox browser...");
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         WebDriverManager.firefoxdriver().setup();
 
         FirefoxOptions options = new FirefoxOptions();
@@ -96,7 +99,7 @@ public class DriverFactory {
         }
 
         driver = new FirefoxDriver(options);
-        
+
         return driver;
     }
 
