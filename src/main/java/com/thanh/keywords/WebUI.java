@@ -6,6 +6,7 @@ import com.thanh.helpers.CaptureHelpers;
 import com.thanh.helpers.PropertiesHelpers;
 import com.thanh.helpers.SystemsHelpers;
 import com.thanh.reports.AllureManager;
+import com.thanh.utils.BrowserInfoUtils;
 import com.thanh.utils.LogUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -19,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
@@ -285,6 +287,104 @@ public class WebUI {
         sleep(STEP_TIME);
         DriverManager.getDriver().switchTo().parentFrame();
     }
+
+    //Upload file
+
+    /**
+     * Upload file kiểu click hiện form chọn file local trong máy tính của bạn
+     *
+     * @param by       là element thuộc kiểu By
+     * @param filePath đường dẫn tuyệt đối đến file trên máy tính của bạn
+     */
+    @Step("Upload File with open Local Form")
+    public static void uploadFileWithLocalForm(By by, String filePath) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+
+        Actions action = new Actions(DriverManager.getDriver());
+        //Click để mở form upload
+        action.moveToElement(getWebElement(by)).click().perform();
+        sleep(3);
+
+        // Khởi tạo Robot class
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+        //Thường filepath sẽ lấy trong thư mục hiện tại 
+        // filePath = SystemsHelpers.getCurrentDir() + "datatest\\pilot.png";
+
+        // Copy File path vào Clipboard
+        StringSelection str = new StringSelection(filePath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+
+        //Check OS for Windows
+        if (BrowserInfoUtils.isWindows()) {
+            // Nhấn Control+V để dán
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+
+            // Xác nhận Control V trên
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.delay(2000);
+            // Nhấn Enter
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        }
+        //Check OS for MAC
+        if (BrowserInfoUtils.isMac()) {
+            robot.keyPress(KeyEvent.VK_META);
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_META);
+            robot.keyRelease(KeyEvent.VK_TAB);
+            robot.delay(1000);
+
+            //Open goto MAC
+            robot.keyPress(KeyEvent.VK_META);
+            robot.keyPress(KeyEvent.VK_SHIFT);
+            robot.keyPress(KeyEvent.VK_G);
+            robot.keyRelease(KeyEvent.VK_META);
+            robot.keyRelease(KeyEvent.VK_SHIFT);
+            robot.keyRelease(KeyEvent.VK_G);
+
+            //Paste the clipboard value
+            robot.keyPress(KeyEvent.VK_META);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_META);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.delay(1000);
+
+            //Press Enter key to close the Goto MAC and Upload on MAC
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        }
+
+        LogUtils.info("Upload File with Local Form: " + filePath);
+        AllureManager.saveTextLog("Upload File with Local Form: " + filePath);
+    }
+
+    /**
+     * Upload file kiểu kéo link trực tiếp vào ô input
+     *
+     * @param by       truyền vào an element of object type By
+     * @param filePath đường dẫn tuyệt đối đến file
+     */
+    @Step("Upload File with SendKeys")
+    public static void uploadFileWithSendKeys(By by, String filePath) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
+        waitForElementVisible(by);
+        getWebElement(by).sendKeys(filePath);
+
+        LogUtils.info("Upload File with SendKeys");
+        AllureManager.saveTextLog("Upload File with SendKeys");
+    }
+
 
     //Handle Alert
     @Step("Handle alert accept")
