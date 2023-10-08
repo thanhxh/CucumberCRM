@@ -12,15 +12,18 @@ Feature: Login to CRM
     And  user should see the notification displays
 
   @InvalidLoginMultiple
-  Scenario: Invalid Login with multiple account
+  Scenario Outline: Invalid Login with multiple account
     Given user login page
     When user enter invalid credentials to login
+      | username   | password   |
+      | <username> | <password> |
+    Then user should see an error message
+    And stay on the login page
+    Examples:
       | username          | password |
       | user@example.com  | 123456   |
       | admin@example.com | 123      |
       | user@example.com  | 123      |
-    Then user should see an error message
-    And stay on the login page
 
   @EmptyUsername
   Scenario: Empty Username
