@@ -5,6 +5,7 @@ import com.thanh.hooks.TestContext;
 import com.thanh.keywords.WebUI;
 import com.thanh.models.Credentials;
 import com.thanh.pages.LoginPage;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -44,21 +45,32 @@ public class StepsLogin {
     public void userShouldSeeTheNotificationDisplays() {
     }
 
-    @DataTableType
-    public Credentials credentialsEntryTransformer(Map<String, String> row) {
-        return new Credentials(row.get("username"), row.get("password"));
-    }
-
+//    @DataTableType
+//    public Credentials credentialsEntryTransformer(Map<String, String> row) {
+//        return new Credentials(row.get("username"), row.get("password"));
+//    }
+//
+//    @When("user enter invalid credentials to login")
+//    public void userEnterInvalidCredentialsToLogin(List<Credentials> credentials) {
+//        for (Credentials credential : credentials) {
+//            String email = credential.getUsername();
+//            String password = credential.getPassword();
+//
+//            loginPage.enterEmailAndPassword(email, password);
+//            loginPage.clickLoginButton();
+//        }
+//    }
     @When("user enter invalid credentials to login")
-    public void userEnterInvalidCredentialsToLogin(List<Credentials> credentials) {
-        for (Credentials credential : credentials) {
-            String email = credential.getUsername();
-            String password = credential.getPassword();
-
+    public void userEnterInvalidCredentialsToLogin(DataTable dataTable) {
+        List<Map<String, String>> data = dataTable.asMaps();
+        for (Map<String, String> item : data) {
+            String email = item.get("username");
+            String password = item.get("password");
             loginPage.enterEmailAndPassword(email, password);
             loginPage.clickLoginButton();
         }
     }
+
 
     @Then("user should see an error message")
     public void userShouldSeeAnErrorMessage() {
