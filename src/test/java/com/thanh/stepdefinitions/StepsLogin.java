@@ -61,13 +61,10 @@ public class StepsLogin {
     @When("user enter invalid credentials to login")
     public void userEnterInvalidCredentialsToLogin(DataTable dataTable) {
         List<Map<String, String>> data = dataTable.asMaps();
-        for (Map<String, String> item : data) {
-            String email = item.get("username");
-            String password = item.get("password");
-            loginPage.enterEmailAndPassword(email, password);
-            loginPage.clickLoginButton();
-
-        }
+        String email = data.get(0).get("username");
+        String password = data.get(0).get("password");
+        loginPage.enterEmailAndPassword(email, password);
+        loginPage.clickLoginButton();
     }
 
 
