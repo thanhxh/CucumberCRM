@@ -3,10 +3,8 @@ package com.thanh.stepdefinitions;
 import com.thanh.constants.ConstantGlobal;
 import com.thanh.hooks.TestContext;
 import com.thanh.keywords.WebUI;
-import com.thanh.models.Credentials;
 import com.thanh.pages.LoginPage;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -45,7 +43,7 @@ public class StepsLogin {
     public void userShouldSeeTheNotificationDisplays() {
     }
 
-//    @DataTableType
+    //    @DataTableType
 //    public Credentials credentialsEntryTransformer(Map<String, String> row) {
 //        return new Credentials(row.get("username"), row.get("password"));
 //    }
@@ -68,6 +66,7 @@ public class StepsLogin {
             String password = item.get("password");
             loginPage.enterEmailAndPassword(email, password);
             loginPage.clickLoginButton();
+
         }
     }
 
